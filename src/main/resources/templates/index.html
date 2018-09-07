@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <title>Hello</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <style>
+        .carousel {
+            height: 600px;
+            background-color: black;
+        }
+
+        .carousel .item {
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${message}">世界，你好</h1>
+
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default">Left</button>
+        <button type="button" class="btn btn-default">Middle</button>
+        <button type="button" class="btn btn-default">Right</button>
+    </div>
+
+    <!-- Single button -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+            Action <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+
+    <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+    </button>
+
+    <button type="button" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+    </button>
+
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#1" data-toggle="tab">Home</a></li>
+            <li role="presentation"><a href="#2" data-toggle="tab">Profile</a></li>
+            <li role="presentation"><a href="#3" data-toggle="tab">Messages</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="1">
+                <iframe src="/page1" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
+
+            <div class="tab-pane" id="2">
+                页面2
+            </div>
+
+            <div class="tab-pane" id="3">
+                页面3
+            </div>
+        </div>
+    </div>
+
+    <p class="text-center text-uppercase">
+        Bootstrap相关段落介绍
+    </p>
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>标题1</th>
+            <th>标题2</th>
+            <th>标题3</th>
+            <th>标题4</th>
+            <th>标题5</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr class="warning">
+            <td>内容1</td>
+            <td>内容2</td>
+            <td>内容3</td>
+            <td>内容4</td>
+            <td>内容5</td>
+        </tr>
+
+        <tr class="info">
+            <td>内容1</td>
+            <td>内容2</td>
+            <td>内容3</td>
+            <td>内容4</td>
+            <td>内容5</td>
+        </tr>
+
+        <tr class="success">
+            <td>内容1</td>
+            <td>内容2</td>
+            <td>内容3</td>
+            <td>内容4</td>
+            <td>内容5</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- 表单 -->
+    <form class="form-inline">
+        <div class="form-group has-success">
+            <label class="control-label" for="">这是一个输入框：</label>
+            <input class="form-control" type="text" placeholder="这是一个输入框">
+        </div>
+
+        <div class="form-group has-warning">
+            <label class="control-label" for="">这是一个下拉框：</label>
+            <select class="form-control">
+                <option value="">北京</option>
+                <option value="">北京</option>
+                <option value="">北京</option>
+                <option value="">北京</option>
+            </select>
+        </div>
+
+        <div class="form-group has-error">
+            <label class="control-label" for="">这是一个输入框：</label>
+            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </form>
+
+    <!-- 按钮 -->
+    <button class="btn btn-default">按钮</button>
+    <button class="btn btn-success btn-sm">按钮</button>
+    <button class="btn btn-primary active">按钮</button> <!-- 激活状态 -->
+    <button class="btn btn-info btn-block">按钮</button> <!-- 全屏按钮 -->
+    <button class="btn btn-warning" disabled="disabled">按钮</button>
+    <button class="btn btn-danger">按钮</button>
+    <button class="btn btn-link">按钮</button>
+
+    <!-- 图片 -->
+    <img src="images/beaty.png" class="img-rounded img-responsive center-block">
+
+    <!-- 字体图标 -->
+    <span class="glyphicon glyphicon-asterisk"></span>
+
+    <span class="glyphicon glyphicon-star"></span>
+
+    <button class="btn btn-default">
+        <span class="glyphicon glyphicon-star"></span>
+        这是一个按钮
+    </button>
+
+    <!-- 下拉菜单 -->
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            这是按钮
+            <span class="caret"></span>
+        </button>
+
+        <ul class="dropdown-menu">
+            <li><a href="http://www.baidu.com">百度</a></li>
+            <li><a href="http://www.baidu.com">百度</a></li>
+            <li><a href="http://www.baidu.com">百度</a></li>
+            <li><a href="http://www.baidu.com">百度</a></li>
+        </ul>
+    </div>
+
+    <!-- 控件组 -->
+    <div class="input-group">
+        <span class="input-group-addon">http://</span>
+        <input type="text" class="form-control">
+    </div>
+
+    <!-- 导航 -->
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="http://www.baidu.com">百度</a></li>
+        <li><a href="http://www.baidu.com">百度</a></li>
+        <li><a href="http://www.baidu.com">百度</a></li>
+    </ul>
+
+
+    <ul class="nav nav-pills">
+        <li class="active"><a href="http://www.baidu.com">百度</a></li>
+        <li><a href="http://www.baidu.com">百度</a></li>
+        <li><a href="http://www.baidu.com">百度</a></li>
+    </ul>
+
+
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="http://www.baidu.com">百度</a></li>
+        <li><a href="http://www.baidu.com">百度</a></li>
+        <li><a href="http://www.baidu.com">百度</a></li>
+    </ul>
+
+    <!-- 分页 -->
+    <nav>
+        <ul class="pager">
+            <li class="previous"><a href="http://www.baidu.com">向左</a></li>
+            <li class="next"><a href="http://www.baidu.com">向右</a></li>
+        </ul>
+        <ul class="pagination">
+            <li class="active"><a href="http://www.baidu.com">1</a></li>
+            <li><a href="http://www.baidu.com">2</a></li>
+            <li><a href="http://www.baidu.com">3</a></li>
+            <li><a href="http://www.baidu.com">4</a></li>
+            <li><a href="http://www.baidu.com">5</a></li>
+        </ul>
+    </nav>
+
+    <!-- 进度条 -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 60%;">
+            60%
+        </div>
+    </div>
+
+    <!-- 列表 -->
+    <ul class="list-group">
+        <li class="list-group-item active">
+            选中列表
+            <span class="badge">14</span>
+        </li>
+
+        <li class="list-group-item disabled">
+            禁用列表
+            <span class="badge">14</span>
+        </li>
+
+        <li class="list-group-item list-group-item-info">
+            这是一个列表
+            <span class="badge">13</span>
+        </li>
+    </ul>
+
+    <!-- 面板 -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            弹出层
+        </div>
+
+        <div class="panel-body">
+            这是面板的具体内容
+        </div>
+
+        <div class="panel-footer">
+            脚注
+        </div>
+    </div>
+
+    <!-- 弹窗 -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="images/slider1.jpg" alt="...">
+                <div class="carousel-caption">
+                    描述1
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/slider2.jpg" alt="...">
+                <div class="carousel-caption">
+                    描述2
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="images/slider3.jpg" alt="...">
+                <div class="carousel-caption">
+                    描述3
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
